@@ -1,0 +1,55 @@
+body {
+    background-image: url('../img/g1.jpg');
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 400px;
+    padding: 16px;
+    background-color: #1a1a1a;
+    margin: 0 auto;
+    margin-top: 100px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 5px;
+    background-color: #3a3a3a;
+    color: white;
+    border: none;
+}
+
+.form-group input:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(255,255,255,0.3);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+small {
+    font-size: 12px;
+    color: #ccc;
+}

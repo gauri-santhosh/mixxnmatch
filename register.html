@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Registration</h1>
+        <form id="registerForm" action="/user/signup" method="POST"> <!-- Modified action attribute -->
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" ">
+                <small>Username should contain at least 18 characters and only alphabets and underscore.</small>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <div class="form-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword">
+            </div>
+            <button type="submit">Register</button>
+            <button type="button" onclick="goBack()">Go Back</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>

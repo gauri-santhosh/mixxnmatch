@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="./css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Login</h1>
+        <form id="login-form">
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" pattern="[a-zA-Z_]{18,}">
+                <small>Username should contain at least 18 characters and only alphabets and underscore.</small>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+            </div>
+            <button type="submit">Login</button>
+            <button type="button" onclick="goBack()">Go Back</button>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+
+    <script>
+        document.getElementById('login-form').addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+    
+            try {
+                console.log("username: " + username + " password: " + password);
+                $.ajax({
+                    url: '/loginroute/loginuser', // Update the URL to match your server route
+                    type: 'POST',
+                    data: {
+                        username: username,
+                        password: password,
+                    },
+                    success: function(response) {
+                        alert(response); // Show message returned from server
+                        window.location.href = '/index';
+                    },
+                    error: function(xhr, status, error) {
+                        console.error(xhr.responseText); // Log any errors to the console
+                        alert('An error occurred while logging in. Please try again later.');
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error:', error.message);
+                alert('An error occurred while logging in. Please try again later.');
+            }
+        });
+    </script>
+
+
+</body>
+</html>
